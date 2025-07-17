@@ -1,0 +1,1015 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bhavin Electricals | Shop Online</title>
+    <!-- Add in your <head> -->
+    <style>
+      #mobileMenu {
+        transition: all 0.3s ease-in-out;
+      }
+    </style>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            fontFamily: { sans: ["Poppins", "ui-sans-serif", "system-ui"] },
+            keyframes: {
+              scroll: {
+                "0%": { transform: "translateX(0)" },
+                "100%": { transform: "translateX(calc(-100% + 240px))" },
+              },
+            },
+            animation: { scroll: "scroll 25s linear infinite" },
+          },
+        },
+      };
+    </script>
+
+    <!-- Poppins font -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- AOS animations -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css"
+      rel="stylesheet"
+    />
+
+    <!-- Font Awesome icons -->
+    <script
+      src="https://kit.fontawesome.com/a076d05399.js"
+      crossorigin="anonymous"
+      defer
+    ></script>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body class="font-sans antialiased text-gray-800 bg-white overflow-x-hidden">
+    <!-- ========= NAVBAR ========= -->
+    <nav
+      class="sticky top-0 z-50 bg-gradient-to-r from-blue-900 via-[#253055] to-yellow-600 shadow-xl shadow-white-900/20 animate__animated animate__fadeInDown"
+      data-aos="fade-down"
+    >
+      <div
+        class="max-w-7xl mx-auto flex items-center justify-between px-4 py-3"
+      >
+        <!-- Brand -->
+        <a
+          href="#"
+          class="flex items-center gap-2 text-white text-lg font-semibold tracking-wide hover:scale-105 transition-transform duration-200"
+        >
+          <img
+            src="logo.jpg"
+            alt="Bhavin Electricals logo"
+            class="h-10 w-10 rounded-full object-cover border-2 border-orange-400 shadow-lg"
+            loading="lazy"
+          />
+          <span
+            class="bg-gradient-to-r from-rose-600 via-amber-400 to-yellow-300 bg-clip-text text-transparent drop-shadow-lg"
+          >
+            Bhavin Electricals
+          </span>
+        </a>
+
+        <!-- Hamburger -->
+        <button
+          id="hamburger"
+          aria-label="Toggle navigation"
+          class="md:hidden text-white text-2xl focus:outline-none hover:text-orange-400 transition-colors duration-200"
+        >
+          <i class="fas fa-bars"></i>
+        </button>
+
+        <!-- Desktop links -->
+        <div
+          id="navLinks"
+          class="hidden md:flex items-center gap-6 text-white font-medium"
+        >
+          <a href="#about" class="nav-link">About</a>
+          <a href="#products" class="nav-link">Products</a>
+          <a href="#features" class="nav-link">Features</a>
+          <a href="#inquiry" class="nav-link">Inquiry</a>
+          <a href="#contact" class="nav-link">Contact</a>
+        </div>
+      </div>
+
+      <!-- Mobile Navigation Menu -->
+      <div
+        id="mobileMenu"
+        class="md:hidden hidden flex-col items-center gap-6 bg-gradient-to-b from-blue-900 via-[#253055] to-yellow-600 text-white font-medium py-6 px-4"
+      >
+        <a href="#about" class="mobile-link">About</a>
+        <a href="#products" class="mobile-link">Products</a>
+        <a href="#features" class="mobile-link">Features</a>
+        <a href="#inquiry" class="mobile-link">Inquiry</a>
+        <a href="#contact" class="mobile-link">Contact</a>
+      </div>
+
+      <!-- thin gradient underline (desktop only) -->
+      <div
+        class="hidden md:block h-1 bg-gradient-to-r from-orange-400 via-pink-400 to-blue-600"
+      ></div>
+
+      <!-- Mobile drawer -->
+      <div
+        id="mobileMenu"
+        class="md:hidden hidden flex-col items-center gap-4 py-6 bg-gradient-to-b from-blue-900 via-[#253055] to-yellow-600 text-white font-medium"
+      >
+        <!-- Initially Visible -->
+        <a href="#about" class="mobile-link">About</a>
+        <a href="#products" class="mobile-link">Products</a>
+        <a href="#features" class="mobile-link">Features</a>
+
+        <!-- More menu (hidden by default) -->
+        <div id="moreMenu" class="hidden flex-col items-center gap-4">
+          <a href="#inquiry" class="mobile-link">Inquiry</a>
+          <a href="#contact" class="mobile-link">Contact</a>
+        </div>
+
+        <!-- Toggle Button -->
+        <button
+          id="toggleMore"
+          class="text-sm text-yellow-300 hover:underline focus:outline-none"
+        >
+          Show More ↓
+        </button>
+      </div>
+      <script>
+        const toggleBtn = document.getElementById("toggleMore");
+        const moreMenu = document.getElementById("moreMenu");
+        let expanded = false;
+
+        toggleBtn?.addEventListener("click", () => {
+          expanded = !expanded;
+          moreMenu.classList.toggle("hidden", !expanded);
+          toggleBtn.textContent = expanded ? "Show Less ↑" : "Show More ↓";
+        });
+      </script>
+    </nav>
+
+    <!-- Dark‑mode toggle -->
+    <button
+      id="darkToggle"
+      class="fixed bottom-24 right-6 w-12 h-12 rounded-full bg-gradient-to-br from-blue-700 via-orange-500 to-pink-600 text-white shadow-2xl flex items-center justify-center border-4 border-white dark:border-gray-800 hover:scale-110 transition-all duration-300 animate__animated animate__bounceIn"
+      aria-label="Toggle dark mode"
+    >
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        class="w-6 h-6"
+        fill="currentColor"
+        viewBox="0 0 24 24"
+      >
+        <path
+          d="M21 12.79A9 9 0 0111.21 3a1 1 0 00-1.13 1.36A7 7 0 1019.64 13.92a1 1 0 00-1.36-1.13z"
+        />
+      </svg>
+    </button>
+
+    <!-- ========= HERO ========= -->
+    <header
+      class="relative h-[85vh] bg-center bg-cover animate__animated animate__fadeIn"
+      style="
+        background-image: linear-gradient(
+            rgba(38, 16, 166, 0.721),
+            rgba(193, 71, 245, 0.281)
+          ),
+          url('index-bg-img1.jpg');
+      "
+    >
+      <div
+        class="absolute inset-0 flex flex-col items-center justify-center text-center px-4"
+        data-aos="zoom-in"
+      >
+        <h1
+          class="text-3xl md:text-5xl font-extrabold text-white mb-4 animate__animated animate__fadeInDown drop-shadow-xl"
+        >
+          Welcome to
+          <span
+            class="bg-gradient-to-r from-orange-400 via-yellow-300 to-pink-400 bg-clip-text text-transparent drop-shadow-lg animate__pulse animate__infinite"
+            >Bhavin Electricals</span
+          >
+        </h1>
+        <p
+          class="text-lg md:text-2xl text-gray-200 mb-6 animate__animated animate__fadeInUp animate__delay-1s bg-black/30 rounded-xl px-4 py-2 shadow-lg"
+        >
+          <span class="font-semibold text-orange-200">Quality wiring</span>,
+          <span class="font-semibold text-orange-200">switches</span>,
+          <span class="font-semibold text-orange-200">repairs</span>,
+          <span class="font-semibold text-orange-200">printing</span>, and
+          <span class="font-semibold text-orange-200">Xerox</span>—all in one
+          place.<br />
+          Explore our
+          <span class="font-semibold text-blue-200">wide range</span> of
+          <span class="font-semibold text-blue-200">electrical products</span>
+          and
+          <span class="font-semibold text-blue-200">reliable services</span>
+          today!
+        </p>
+        <a
+          href="#products"
+          class="px-8 py-3 bg-gradient-to-r from-orange-500 via-pink-500 to-blue-600 hover:from-blue-600 hover:to-orange-500 text-white font-bold rounded-full shadow-xl transition-all duration-300 animate__animated animate__zoomIn animate__delay-2s hover:scale-105"
+        >
+          <i
+            class="fas fa-bolt mr-2 animate__animated animate__flash animate__infinite"
+          ></i>
+          Explore Products
+        </a>
+      </div>
+      <!-- Animate.css CDN for animations -->
+      <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+      />
+      <!-- Decorative gradient blobs -->
+      <div
+        class="absolute -top-10 left-10 w-40 h-40 bg-gradient-to-br from-orange-400 via-pink-400 to-blue-400 opacity-30 rounded-full blur-2xl animate-pulse"
+      ></div>
+      <div
+        class="absolute bottom-10 right-10 w-40 h-40 bg-gradient-to-br from-blue-400 via-orange-300 to-pink-400 opacity-30 rounded-full blur-2xl animate-pulse delay-1000"
+      ></div>
+    </header>
+
+    <!-- CAROUSEL SECTION - HTML (Enhanced) -->
+    <section class="py-10">
+      <div class="max-w-5xl mx-auto relative">
+        <!-- Carousel wrapper -->
+        <div
+          class="overflow-hidden rounded-xl shadow-md bg-white dark:bg-gray-800"
+        >
+          <div
+            id="carouselInner"
+            class="flex transition-transform duration-700 ease-in-out"
+            style="transform: translateX(0)"
+          >
+            <!-- Carousel Item 1 -->
+            <div
+              class="min-w-full flex flex-col items-center justify-center p-4 animate__animated animate__fadeInLeft"
+            >
+              <img
+                src="shop.png"
+                alt="Shop front"
+                class="w-full max-w-md h-64 object-cover rounded-lg shadow-lg border-4 border-orange-200 dark:border-blue-900"
+                loading="lazy"
+              />
+              <div class="mt-4 text-center">
+                <h3
+                  class="text-xl font-bold text-blue-800 dark:text-orange-300"
+                >
+                  Our Shop Front
+                </h3>
+                <p class="text-gray-600 dark:text-gray-300">
+                  Visit our welcoming store in Bhimnagar, Boisar for all your
+                  electrical needs.
+                </p>
+              </div>
+            </div>
+            <!-- Carousel Item 2 -->
+            <div
+              class="min-w-full flex flex-col items-center justify-center p-4 animate__animated animate__fadeInLeft"
+            >
+              <img
+                src="repare.jpeg"
+                alt="Repair services"
+                class="w-full max-w-md h-64 object-cover rounded-lg shadow-lg border-4 border-orange-200 dark:border-blue-900"
+                loading="lazy"
+              />
+              <div class="mt-4 text-center">
+                <h3
+                  class="text-xl font-bold text-blue-800 dark:text-orange-300"
+                >
+                  Expert Repairs
+                </h3>
+                <p class="text-gray-600 dark:text-gray-300">
+                  Professional mixer, fan, and home wiring repairs by skilled
+                  technicians.
+                </p>
+              </div>
+            </div>
+            <!-- Carousel Item 3 -->
+            <div
+              class="min-w-full flex flex-col items-center justify-center p-4 animate__animated animate__fadeInLeft"
+            >
+              <img
+                src="fan.jpeg"
+                alt="Ceiling fans"
+                class="w-full max-w-md h-64 object-cover rounded-lg shadow-lg border-4 border-orange-200 dark:border-blue-900"
+                loading="lazy"
+              />
+              <div class="mt-4 text-center">
+                <h3
+                  class="text-xl font-bold text-blue-800 dark:text-orange-300"
+                >
+                  Ceiling Fans
+                </h3>
+                <p class="text-gray-600 dark:text-gray-300">
+                  High-speed, energy-efficient fans for every room and budget.
+                </p>
+              </div>
+            </div>
+            <!-- Carousel Item 4 -->
+            <div
+              class="min-w-full flex flex-col items-center justify-center p-4 animate__animated animate__fadeInLeft"
+            >
+              <img
+                src="mixer.webp"
+                alt="Mixer grinder"
+                class="w-full max-w-md h-64 object-cover rounded-lg shadow-lg border-4 border-orange-200 dark:border-blue-900"
+                loading="lazy"
+              />
+              <div class="mt-4 text-center">
+                <h3
+                  class="text-xl font-bold text-blue-800 dark:text-orange-300"
+                >
+                  Mixer Grinders
+                </h3>
+                <p class="text-gray-600 dark:text-gray-300">
+                  Durable and powerful mixers for home and commercial use.
+                </p>
+              </div>
+            </div>
+            <!-- Carousel Item 5 -->
+            <div
+              class="min-w-full flex flex-col items-center justify-center p-4 animate__animated animate__fadeInLeft"
+            >
+              <img
+                src="elec.jpeg"
+                alt="Electrical goods"
+                class="w-full max-w-md h-64 object-cover rounded-lg shadow-lg border-4 border-orange-200 dark:border-blue-900"
+                loading="lazy"
+              />
+              <div class="mt-4 text-center">
+                <h3
+                  class="text-xl font-bold text-blue-800 dark:text-orange-300"
+                >
+                  Electrical Goods
+                </h3>
+                <p class="text-gray-600 dark:text-gray-300">
+                  Switches, wires, sockets, and accessories from trusted brands.
+                </p>
+              </div>
+            </div>
+            <!-- Carousel Item 6 -->
+            <div
+              class="min-w-full flex flex-col items-center justify-center p-4 animate__animated animate__fadeInLeft"
+            >
+              <img
+                src="Light.webp"
+                alt="LED lighting"
+                class="w-full max-w-md h-64 object-cover rounded-lg shadow-lg border-4 border-orange-200 dark:border-blue-900"
+                loading="lazy"
+              />
+              <div class="mt-4 text-center">
+                <h3
+                  class="text-xl font-bold text-blue-800 dark:text-orange-300"
+                >
+                  LED Lighting
+                </h3>
+                <p class="text-gray-600 dark:text-gray-300">
+                  Bright, energy-saving LED bulbs, tubes, and decorative lights.
+                </p>
+              </div>
+            </div>
+            <!-- Carousel Item 7 -->
+            <div
+              class="min-w-full flex flex-col items-center justify-center p-4 animate__animated animate__fadeInLeft"
+            >
+              <img
+                src="xerox-print.jpeg"
+                alt="Printing services"
+                class="w-full max-w-md h-64 object-cover rounded-lg shadow-lg border-4 border-orange-200 dark:border-blue-900"
+                loading="lazy"
+              />
+              <div class="mt-4 text-center">
+                <h3
+                  class="text-xl font-bold text-blue-800 dark:text-orange-300"
+                >
+                  Printing Services
+                </h3>
+                <p class="text-gray-600 dark:text-gray-300">
+                  Color and B/W printing, lamination, and spiral binding
+                  available.
+                </p>
+              </div>
+            </div>
+            <!-- Carousel Item 8 -->
+            <div
+              class="min-w-full flex flex-col items-center justify-center p-4 animate__animated animate__fadeInLeft"
+            >
+              <img
+                src="xerox.webp"
+                alt="Xerox machine"
+                class="w-full max-w-md h-64 object-cover rounded-lg shadow-lg border-4 border-orange-200 dark:border-blue-900"
+                loading="lazy"
+              />
+              <div class="mt-4 text-center">
+                <h3
+                  class="text-xl font-bold text-blue-800 dark:text-orange-300"
+                >
+                  Xerox Machine
+                </h3>
+                <p class="text-gray-600 dark:text-gray-300">
+                  Fast, high-quality Xerox copies for documents and projects.
+                </p>
+              </div>
+            </div>
+            <!-- Carousel Item 9 -->
+            <div
+              class="min-w-full flex flex-col items-center justify-center p-4 animate__animated animate__fadeInLeft"
+            >
+              <img
+                src="standfan.jpeg"
+                alt="Stand fan"
+                class="w-full max-w-md h-64 object-cover rounded-lg shadow-lg border-4 border-orange-200 dark:border-blue-900"
+                loading="lazy"
+              />
+              <div class="mt-4 text-center">
+                <h3
+                  class="text-xl font-bold text-blue-800 dark:text-orange-300"
+                >
+                  Stand Fans
+                </h3>
+                <p class="text-gray-600 dark:text-gray-300">
+                  Portable stand fans for flexible cooling in any space.
+                </p>
+              </div>
+            </div>
+            <!-- Carousel Item 10 -->
+            <div
+              class="min-w-full flex flex-col items-center justify-center p-4 animate__animated animate__fadeInLeft"
+            >
+              <img
+                src="fitting.jpeg"
+                alt="Home fittings"
+                class="w-full max-w-md h-64 object-cover rounded-lg shadow-lg border-4 border-orange-200 dark:border-blue-900"
+                loading="lazy"
+              />
+              <div class="mt-4 text-center">
+                <h3
+                  class="text-xl font-bold text-blue-800 dark:text-orange-300"
+                >
+                  Home Fittings
+                </h3>
+                <p class="text-gray-600 dark:text-gray-300">
+                  Quality fittings and accessories for safe, stylish
+                  installations.
+                </p>
+              </div>
+            </div>
+          </div>
+          <!-- Carousel Controls -->
+          <button
+            id="carouselPrev"
+            class="absolute left-2 top-1/2 -translate-y-1/2 bg-gradient-to-br from-blue-700 to-orange-500 text-white rounded-full w-10 h-10 flex items-center justify-center shadow-lg hover:scale-110 transition z-10"
+            aria-label="Previous"
+            type="button"
+          >
+            <i class="fas fa-chevron-left"></i>
+          </button>
+          <button
+            id="carouselNext"
+            class="absolute right-2 top-1/2 -translate-y-1/2 bg-gradient-to-br from-blue-700 to-orange-500 text-white rounded-full w-10 h-10 flex items-center justify-center shadow-lg hover:scale-110 transition z-10"
+            aria-label="Next"
+            type="button"
+          >
+            <i class="fas fa-chevron-right"></i>
+          </button>
+          <!-- Carousel Indicators -->
+          <div
+            class="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2 z-10"
+          >
+            <span
+              class="carousel-dot w-3 h-3 rounded-full bg-orange-400 opacity-70 cursor-pointer"
+            ></span>
+            <span
+              class="carousel-dot w-3 h-3 rounded-full bg-orange-400 opacity-30 cursor-pointer"
+            ></span>
+            <span
+              class="carousel-dot w-3 h-3 rounded-full bg-orange-400 opacity-30 cursor-pointer"
+            ></span>
+            <span
+              class="carousel-dot w-3 h-3 rounded-full bg-orange-400 opacity-30 cursor-pointer"
+            ></span>
+            <span
+              class="carousel-dot w-3 h-3 rounded-full bg-orange-400 opacity-30 cursor-pointer"
+            ></span>
+            <span
+              class="carousel-dot w-3 h-3 rounded-full bg-orange-400 opacity-30 cursor-pointer"
+            ></span>
+            <span
+              class="carousel-dot w-3 h-3 rounded-full bg-orange-400 opacity-30 cursor-pointer"
+            ></span>
+            <span
+              class="carousel-dot w-3 h-3 rounded-full bg-orange-400 opacity-30 cursor-pointer"
+            ></span>
+            <span
+              class="carousel-dot w-3 h-3 rounded-full bg-orange-400 opacity-30 cursor-pointer"
+            ></span>
+            <span
+              class="carousel-dot w-3 h-3 rounded-full bg-orange-400 opacity-30 cursor-pointer"
+            ></span>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Carousel Script -->
+    <script>
+      // Carousel logic
+      const carouselInner = document.getElementById("carouselInner");
+      const prevBtn = document.getElementById("carouselPrev");
+      const nextBtn = document.getElementById("carouselNext");
+      const dots = document.querySelectorAll(".carousel-dot");
+      const totalSlides = 10;
+      let currentSlide = 0;
+      let autoPlayInterval;
+
+      function goToSlide(idx) {
+        currentSlide = idx;
+        carouselInner.style.transform = `translateX(-${idx * 100}%)`;
+        dots.forEach((dot, i) => {
+          dot.style.opacity = i === idx ? "0.7" : "0.3";
+        });
+      }
+
+      function nextSlide() {
+        currentSlide = (currentSlide + 1) % totalSlides;
+        goToSlide(currentSlide);
+      }
+
+      function prevSlide() {
+        currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+        goToSlide(currentSlide);
+      }
+
+      // Dot click
+      dots.forEach((dot, i) => {
+        dot.addEventListener("click", () => {
+          goToSlide(i);
+          resetAutoPlay();
+        });
+      });
+
+      // Button click
+      nextBtn.addEventListener("click", () => {
+        nextSlide();
+        resetAutoPlay();
+      });
+      prevBtn.addEventListener("click", () => {
+        prevSlide();
+        resetAutoPlay();
+      });
+
+      // Auto play
+      function startAutoPlay() {
+        autoPlayInterval = setInterval(nextSlide, 4000);
+      }
+      function resetAutoPlay() {
+        clearInterval(autoPlayInterval);
+        startAutoPlay();
+      }
+
+      // Init
+      goToSlide(0);
+      startAutoPlay();
+    </script>
+
+    <!-- ========= ABOUT ========= -->
+    <section id="about" class="max-w-5xl mx-auto px-4 py-14" data-aos="fade-up">
+      <div
+        class="bg-gradient-to-br from-blue-50 via-orange-50 to-white dark:from-gray-800 dark:via-gray-900 dark:to-gray-800 rounded-2xl shadow-xl p-8 md:p-12 transition-all duration-500 hover:shadow-2xl animate__animated animate__fadeInUp"
+      >
+        <h2
+          class="text-4xl font-extrabold text-blue-800 dark:text-orange-400 text-center mb-6 drop-shadow-lg animate__animated animate__fadeInDown"
+        >
+          Trusted Electrical Partner for Every Need
+        </h2>
+        <p
+          class="mb-4 text-center text-lg md:text-xl text-gray-700 dark:text-gray-200 leading-relaxed animate__animated animate__fadeInUp animate__delay-1s"
+        >
+          At
+          <span class="font-semibold text-orange-600 dark:text-orange-300"
+            >Bhavin Electricals</span
+          >, we’re more than just a shop — we’re your trusted partner for homes,
+          students, and businesses. Discover a wide range of high-quality
+          electrical goods:
+          <span class="font-semibold text-blue-700 dark:text-blue-300"
+            >LED lights</span
+          >,
+          <span class="font-semibold text-blue-700 dark:text-blue-300"
+            >fans</span
+          >,
+          <span class="font-semibold text-blue-700 dark:text-blue-300"
+            >switches</span
+          >,
+          <span class="font-semibold text-blue-700 dark:text-blue-300"
+            >mixers</span
+          >, tools, and accessories. Our expert repair services cover mixer
+          repairs, fan winding, and home wiring with precision and reliability.
+        </p>
+        <p
+          class="text-center text-lg md:text-xl text-gray-700 dark:text-gray-200 leading-relaxed animate__animated animate__fadeInUp animate__delay-2s"
+        >
+          We also specialize in affordable
+          <span class="font-semibold text-orange-600 dark:text-orange-300"
+            >student project kits</span
+          >, stationery, and
+          <span class="font-semibold text-orange-600 dark:text-orange-300"
+            >Xerox/printing services</span
+          >
+          — all under one roof. With fast service, honest pricing, and over a
+          decade of experience, we’re here to brighten every home and power
+          every project with excellence.
+        </p>
+      </div>
+    </section>
+
+    <!-- ========= PRODUCTS ========= -->
+    <section
+      id="products"
+      class="bg-gradient-to-br from-blue-50 via-orange-50 to-white dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 py-16"
+      data-aos="fade-up"
+    >
+      <div class="max-w-6xl mx-auto px-4">
+        <h2
+          class="text-4xl font-extrabold text-center text-transparent bg-clip-text bg-gradient-to-r from-blue-700 via-orange-500 to-pink-600 mb-10 drop-shadow-lg animate__animated animate__fadeInDown"
+        >
+          Products
+        </h2>
+
+        <!-- Add‑product form -->
+        <form
+          id="productForm"
+          class="bg-white/90 dark:bg-gray-800/80 rounded-2xl shadow-2xl p-8 max-w-xl mx-auto mb-14 space-y-5 border border-orange-100 dark:border-gray-700 animate__animated animate__zoomIn"
+          novalidate
+          data-aos="zoom-in"
+        >
+          <div class="flex gap-4">
+            <input
+              id="productName"
+              class="w-1/2 border border-gray-300 dark:border-gray-600 rounded-lg px-3 py-2 focus:ring-2 focus:ring-orange-400 transition"
+              placeholder="Product Name"
+              required
+            />
+            <input
+              id="productCategory"
+              class="w-1/2 border border-gray-300 dark:border-gray-600 rounded-lg px-3 py-2 focus:ring-2 focus:ring-orange-400 transition"
+              placeholder="Category (Fan, Light, etc.)"
+              required
+            />
+          </div>
+          <div class="flex gap-4">
+            <input
+              id="productPrice"
+              class="w-1/2 border border-gray-300 dark:border-gray-600 rounded-lg px-3 py-2 focus:ring-2 focus:ring-orange-400 transition"
+              placeholder="Price (₹)"
+              required
+            />
+            <input
+              id="productImg"
+              class="w-1/2 border border-gray-300 dark:border-gray-600 rounded-lg px-3 py-2 focus:ring-2 focus:ring-orange-400 transition"
+              placeholder="Image URL (optional)"
+            />
+          </div>
+          <textarea
+            id="productDesc"
+            class="w-full border border-gray-300 dark:border-gray-600 rounded-lg px-3 py-2 focus:ring-2 focus:ring-orange-400 transition"
+            placeholder="Short Description"
+          ></textarea>
+          <button
+            type="submit"
+            class="w-full py-2 bg-gradient-to-r from-orange-500 to-pink-500 hover:from-pink-500 hover:to-orange-500 text-white font-bold rounded-full shadow-lg transition-all duration-300 animate__animated animate__pulse animate__infinite"
+          >
+            <i class="fas fa-plus mr-2"></i>Add Product
+          </button>
+        </form>
+
+        <!-- Product grid -->
+        <div id="productGrid" class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+          <!-- Example product card for demo (remove if using JS) -->
+          <!--
+        <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-xl p-6 flex flex-col items-center animate__animated animate__fadeInUp animate__delay-2s hover:scale-105 hover:shadow-2xl transition-all duration-300 border-t-4 border-orange-400">
+        <img src="fan.jpeg" alt="Fan" class="w-32 h-32 object-cover rounded-xl mb-4 shadow-md border-4 border-blue-100 dark:border-gray-700" />
+        <h3 class="text-xl font-bold text-blue-800 dark:text-orange-300 mb-2">Ceiling Fan</h3>
+        <p class="text-gray-600 dark:text-gray-200 mb-2">High speed, energy efficient, 3-year warranty.</p>
+        <span class="text-lg font-semibold text-orange-500 mb-3">₹1200</span>
+        <span class="inline-block px-3 py-1 bg-blue-100 dark:bg-orange-900 text-blue-700 dark:text-orange-200 rounded-full text-xs font-medium mb-2">Fan</span>
+        </div>
+        --></div>
+      </div>
+    </section>
+
+    <!-- ========= FEATURES ========= -->
+    <section
+      id="features"
+      class="max-w-6xl mx-auto px-4 py-16"
+      data-aos="zoom-in-up"
+    >
+      <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
+        <div
+          class="bg-gradient-to-br from-orange-100 via-yellow-50 to-white dark:from-orange-900 dark:via-orange-800 dark:to-gray-900 rounded-2xl p-8 shadow-xl hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 animate__animated animate__fadeInUp"
+        >
+          <h3
+            class="font-bold text-xl text-orange-700 dark:text-yellow-300 mb-2 text-center"
+          >
+            Electrical Goods
+          </h3>
+          <ul class="text-gray-700 dark:text-gray-200 text-center space-y-1">
+            <li>LEDs, fans, switches, wires</li>
+            <li>Mixers, irons, extension boards</li>
+            <li>Top brands, energy saving</li>
+          </ul>
+        </div>
+        <div
+          class="bg-gradient-to-br from-blue-100 via-orange-50 to-white dark:from-blue-900 dark:via-orange-900 dark:to-gray-900 rounded-2xl p-8 shadow-xl hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 animate__animated animate__fadeInUp animate__delay-1s"
+        >
+          <h3
+            class="font-bold text-xl text-blue-700 dark:text-orange-300 mb-2 text-center"
+          >
+            Repair Services
+          </h3>
+          <ul class="text-gray-700 dark:text-gray-200 text-center space-y-1">
+            <li>Fan & mixer repair</li>
+            <li>Wiring & troubleshooting</li>
+            <li>Quick, reliable service</li>
+          </ul>
+        </div>
+        <div
+          class="bg-gradient-to-br from-pink-100 via-orange-50 to-white dark:from-pink-900 dark:via-orange-900 dark:to-gray-900 rounded-2xl p-8 shadow-xl hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 animate__animated animate__fadeInUp animate__delay-2s"
+        >
+          <h3
+            class="font-bold text-xl text-pink-700 dark:text-orange-300 mb-2 text-center"
+          >
+            Student Kits
+          </h3>
+          <ul class="text-gray-700 dark:text-gray-200 text-center space-y-1">
+            <li>Project kits & science models</li>
+            <li>Stationery & supplies</li>
+            <li>Guidance for students</li>
+          </ul>
+        </div>
+        <div
+          class="bg-gradient-to-br from-green-100 via-orange-50 to-white dark:from-green-900 dark:via-orange-900 dark:to-gray-900 rounded-2xl p-8 shadow-xl hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 animate__animated animate__fadeInUp animate__delay-3s"
+        >
+          <h3
+            class="font-bold text-xl text-green-700 dark:text-orange-300 mb-2 text-center"
+          >
+            Print & Xerox
+          </h3>
+          <ul class="text-gray-700 dark:text-gray-200 text-center space-y-1">
+            <li>Color/BW print & Xerox</li>
+            <li>Lamination, spiral binding</li>
+            <li>Fast, affordable</li>
+          </ul>
+        </div>
+        <div
+          class="bg-gradient-to-br from-yellow-100 via-orange-50 to-white dark:from-yellow-900 dark:via-orange-900 dark:to-gray-900 rounded-2xl p-8 shadow-xl hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 animate__animated animate__fadeInUp animate__delay-4s"
+        >
+          <h3
+            class="font-bold text-xl text-yellow-700 dark:text-orange-200 mb-2 text-center"
+          >
+            Home Automation
+          </h3>
+          <ul class="text-gray-700 dark:text-gray-200 text-center space-y-1">
+            <li>Smart switches & dimmers</li>
+            <li>Remote & energy solutions</li>
+          </ul>
+        </div>
+        <div
+          class="bg-gradient-to-br from-purple-100 via-orange-50 to-white dark:from-purple-900 dark:via-orange-900 dark:to-gray-900 rounded-2xl p-8 shadow-xl hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 animate__animated animate__fadeInUp animate__delay-5s"
+        >
+          <h3
+            class="font-bold text-xl text-purple-700 dark:text-orange-200 mb-2 text-center"
+          >
+            Tools & Accessories
+          </h3>
+          <ul class="text-gray-700 dark:text-gray-200 text-center space-y-1">
+            <li>Tool kits, testers, pliers</li>
+            <li>Adapters, decorative lights</li>
+          </ul>
+        </div>
+        <div
+          class="bg-gradient-to-br from-red-100 via-orange-50 to-white dark:from-red-900 dark:via-orange-900 dark:to-gray-900 rounded-2xl p-8 shadow-xl hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 animate__animated animate__fadeInUp"
+        >
+          <h3
+            class="font-bold text-xl text-red-700 dark:text-orange-200 mb-2 text-center"
+          >
+            Customer Support
+          </h3>
+          <ul class="text-gray-700 dark:text-gray-200 text-center space-y-1">
+            <li>Free advice & after-sales</li>
+            <li>Warranty help, WhatsApp support</li>
+          </ul>
+        </div>
+        <div
+          class="bg-gradient-to-br from-cyan-100 via-orange-50 to-white dark:from-cyan-900 dark:via-orange-900 dark:to-gray-900 rounded-2xl p-8 shadow-xl hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 animate__animated animate__fadeInUp"
+        >
+          <h3
+            class="font-bold text-xl text-cyan-700 dark:text-orange-200 mb-2 text-center"
+          >
+            Bulk Orders
+          </h3>
+          <ul class="text-gray-700 dark:text-gray-200 text-center space-y-1">
+            <li>Special rates for schools/offices</li>
+            <li>Custom quotes, fast delivery</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========= INQUIRY ========= -->
+    <section
+      id="inquiry"
+      class="py-16 bg-gradient-to-br from-blue-50 via-orange-50 to-white dark:from-gray-900 dark:via-gray-800 dark:to-gray-900"
+      data-aos="zoom-in-up"
+    >
+      <div class="max-w-xl mx-auto px-4">
+        <h2
+          class="text-4xl font-extrabold text-center text-transparent bg-clip-text bg-gradient-to-r from-blue-700 via-orange-500 to-pink-600 mb-10 drop-shadow-lg animate__animated animate__fadeInDown"
+        >
+          Inquiry / Contact
+        </h2>
+        <form
+          id="inquiryForm"
+          class="bg-white/90 dark:bg-gray-800/90 rounded-2xl shadow-2xl p-8 space-y-5 border border-orange-100 dark:border-gray-700 animate__animated animate__zoomIn"
+        >
+          <input
+            id="inqName"
+            class="w-full border border-blue-300 dark:border-orange-400 rounded-lg px-4 py-3 focus:ring-2 focus:ring-orange-400 transition placeholder:text-gray-400 dark:placeholder:text-gray-500"
+            placeholder="Name"
+            required
+          />
+          <input
+            id="inqPhone"
+            class="w-full border border-blue-300 dark:border-orange-400 rounded-lg px-4 py-3 focus:ring-2 focus:ring-orange-400 transition placeholder:text-gray-400 dark:placeholder:text-gray-500"
+            placeholder="Phone"
+            required
+          />
+          <textarea
+            id="inqMessage"
+            class="w-full border border-blue-300 dark:border-orange-400 rounded-lg px-4 py-3 focus:ring-2 focus:ring-orange-400 transition placeholder:text-gray-400 dark:placeholder:text-gray-500"
+            placeholder="Your Message"
+            required
+          ></textarea>
+          <button
+            type="submit"
+            class="w-full py-3 bg-gradient-to-r from-orange-500 via-pink-500 to-blue-600 hover:from-blue-600 hover:to-orange-500 text-white font-bold rounded-full shadow-lg transition-all duration-300 animate__animated animate__pulse animate__infinite"
+          >
+            <i class="fas fa-paper-plane mr-2"></i>Submit
+          </button>
+          <p
+            id="inquirySuccess"
+            class="hidden text-green-600 font-medium animate__animated animate__fadeInUp"
+          >
+            ✅ Inquiry submitted successfully!
+          </p>
+        </form>
+        <div
+          class="text-center mt-8 animate__animated animate__fadeInUp animate__delay-2s"
+        >
+          <a
+            href="https://www.google.com/maps?q=Bhimnagar,Boisar"
+            target="_blank"
+            class="inline-flex items-center gap-2 text-lg font-semibold text-blue-700 dark:text-orange-300 hover:underline transition"
+            ><svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="w-6 h-6 text-orange-500"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M17.657 16.657L13.414 12.414a4 4 0 10-5.657 5.657l4.243 4.243a8 8 0 1011.314-11.314l-4.243 4.243z"
+              />
+            </svg>
+            Find Us on Google Maps</a
+          >
+        </div>
+      </div>
+    </section>
+
+    <!-- ========= CONTACT ========= -->
+    <section
+      id="contact"
+      class="max-w-4xl mx-auto px-4 py-16 relative"
+      data-aos="fade-up"
+    >
+      <div class="absolute inset-0 pointer-events-none z-0">
+        <!-- Decorative gradient blobs -->
+        <div
+          class="absolute -top-10 -left-10 w-40 h-40 bg-gradient-to-br from-blue-400 via-orange-300 to-pink-400 opacity-30 rounded-full blur-2xl animate-pulse"
+        ></div>
+        <div
+          class="absolute -bottom-10 -right-10 w-40 h-40 bg-gradient-to-br from-pink-400 via-orange-300 to-blue-400 opacity-30 rounded-full blur-2xl animate-pulse delay-1000"
+        ></div>
+      </div>
+      <h2
+        class="text-4xl font-extrabold text-center bg-gradient-to-r from-blue-700 via-orange-500 to-pink-600 bg-clip-text text-transparent mb-10 drop-shadow-lg animate__animated animate__fadeInDown"
+      >
+        Contact Us
+      </h2>
+      <div class="space-y-4 text-center relative z-10">
+        <p
+          class="text-lg animate__animated animate__fadeInUp animate__delay-1s"
+        >
+          <strong class="text-orange-600 dark:text-orange-300"
+            >Shop Name:</strong
+          >
+          <span class="text-blue-800 dark:text-orange-200 font-semibold"
+            >Bhavin Electricals</span
+          >
+        </p>
+        <p
+          class="text-lg animate__animated animate__fadeInUp animate__delay-2s"
+        >
+          <strong class="text-orange-600 dark:text-orange-300">Owner:</strong>
+          <span class="text-blue-800 dark:text-orange-200 font-semibold"
+            >Jeevan Bharambe</span
+          >
+        </p>
+        <p
+          class="text-lg animate__animated animate__fadeInUp animate__delay-3s"
+        >
+          <strong class="text-orange-600 dark:text-orange-300">Phone:</strong>
+          <a
+            href="tel:9730573905"
+            class="text-blue-600 hover:text-orange-500 font-semibold transition-colors duration-200 underline underline-offset-2"
+            >97305 73905</a
+          >
+          <span class="mx-1 text-gray-400">/</span>
+          <a
+            href="tel:7875294587"
+            class="text-blue-600 hover:text-orange-500 font-semibold transition-colors duration-200 underline underline-offset-2"
+            >78752 94587</a
+          >
+        </p>
+        <p
+          class="text-lg animate__animated animate__fadeInUp animate__delay-4s"
+        >
+          <strong class="text-orange-600 dark:text-orange-300"
+            >Location:</strong
+          >
+          <span
+            class="block text-sm sm:text-base text-blue-800 dark:text-orange-200 font-semibold leading-relaxed break-words"
+          >
+            Dattawadi, Bhimnagar, Boisar, Maharashtra
+          </span>
+        </p>
+        <p
+          class="text-lg animate__animated animate__fadeInUp animate__delay-5s"
+        >
+          <strong class="text-orange-600 dark:text-orange-300">Email:</strong>
+          <a
+            href="mailto:bharambejeevan@gmail.com"
+            class="text-blue-600 hover:text-orange-500 font-semibold transition-colors duration-200 underline underline-offset-2"
+          >
+            bharambejeevan@gmail.com
+          </a>
+        </p>
+      </div>
+
+      <!-- WhatsApp floating button with bounce animation -->
+      <a
+        href="https://wa.me/919730573905"
+        class="fixed bottom-6 right-6 transform hover:scale-110 transition z-50 animate-bounce"
+        target="_blank"
+        aria-label="Chat on WhatsApp"
+      >
+        <img
+          src="https://img.icons8.com/color/48/000000/whatsapp--v1.png"
+          alt="WhatsApp"
+          class="w-16 h-16 rounded-full shadow-2xl border-4 border-white dark:border-gray-800"
+          loading="lazy"
+        />
+      </a>
+    </section>
+
+    <!-- ========= FOOTER ========= -->
+    <footer
+      class="bg-gradient-to-r from-blue-900 via-blue-800 to-pink-300 text-white text-center py-5 shadow-inner animate__animated animate__fadeInUp"
+    >
+      <p class="text-lg tracking-wide">
+        &copy; <span id="year"></span>
+        <span class="font-semibold">Bhavin Electricals</span>
+      </p>
+    </footer>
+
+    <!-- Global popup -->
+    <div id="popup" class="popup"></div>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script src="script.js" defer></script>
+  </body>
+</html>
